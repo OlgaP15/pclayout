@@ -10,7 +10,6 @@ contents.forEach((elem) => {
                 item.querySelector('.program-line__descr').classList.remove('active')
             }
         })
-
         descr.classList.toggle('active')
     })
 })
