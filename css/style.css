@@ -611,6 +611,10 @@ progress::-moz-progress-value {
     margin-bottom: 1.6rem;
 }
 
+.modal__input::placeholder {
+    color:var(--text-white-color)
+}
+
 .modal__elements {
     width: 45rem;
     margin: 0 auto;

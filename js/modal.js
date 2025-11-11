@@ -1,22 +1,25 @@
-const modalBtns = document.querySelectorAll(".modal__button, .course__button");
-const modal = document.querySelector(".modal");
+const modal = () => {
+  const modalBtns = document.querySelectorAll(
+    ".modal__button, .course__button"
+  );
+  const modal = document.querySelector(".modal");
 
-modalBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    modal.style.display = "flex";
+  modalBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      modal.style.display = "flex";
+    });
   });
-});
 
-modal.addEventListener("click", (event) => {
-  const modalContent = event.target.closest(".modal__inner");
-  if (!modalContent) {
-    modal.style.display = "";
-  }
-});
+  modal.addEventListener("click", (event) => {
+    const modalContent = event.target.closest(".modal__inner");
+    if (!modalContent) {
+      modal.style.display = "";
+    }
+  });
 
-const closeButton = document.createElement("div");
-closeButton.innerHTML = "×"; 
-closeButton.style.cssText = `
+  const closeButton = document.createElement("div");
+  closeButton.innerHTML = "×";
+  closeButton.style.cssText = `
   position: absolute;
   top: 10px;
   right: 15px;
@@ -33,18 +36,21 @@ closeButton.style.cssText = `
   transition: background-color 0.3s;
 `;
 
-closeButton.addEventListener("mouseover", function() {
-  this.style.backgroundColor = "rgba(0,0,0,0.1)";
-});
+  closeButton.addEventListener("mouseover", function () {
+    this.style.backgroundColor = "rgba(0,0,0,0.1)";
+  });
 
-closeButton.addEventListener("mouseout", function() {
-  this.style.backgroundColor = "transparent";
-});
+  closeButton.addEventListener("mouseout", function () {
+    this.style.backgroundColor = "transparent";
+  });
 
-closeButton.addEventListener("click", () => {
-  modal.style.display = "";
-});
+  closeButton.addEventListener("click", () => {
+    modal.style.display = "";
+  });
 
-const modalInner = document.querySelector(".modal__inner");
-modalInner.style.position = "relative";
-modalInner.appendChild(closeButton);
+  const modalInner = document.querySelector(".modal__inner");
+  modalInner.style.position = "relative";
+  modalInner.appendChild(closeButton);
+};
+
+modal();
