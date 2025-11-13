@@ -226,6 +226,10 @@ input {
     width: 100%;
 }
 
+.course__progress-element progress {
+    transition: all 0.1s ease-out;
+}
+
 .course__progress-minmax {
     display: flex;
     align-items: center;
